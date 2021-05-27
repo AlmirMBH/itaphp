@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="cubecalculator.js"></script>
+    <style>
+        .calculator{
+            text-align: center;
+        }
+    </style>
+    <title>Cube volume and sides</title>
+</head>
+<body>
+    
+    <!-- assumption is that all sides of the cube are equal, 
+        otherwise more input fields would have been enabled and included in calculations -->
+    <div class="calculator">
+        <h1>Volume and sides length calculator</h1>
+
+        <input type="number" name="side" id="box" placeholder=" Enter cube side">    
+        <button id="btn" onclick="calculateVolume(box)">Cube Volume</button>
+        <button id="btn" onclick="calculateSidesLength(box)">Cube Sides</button> 
+
+        <p>The volume of the box is: <span id="box-volume"></span> </p>
+        <p>The length of the sides of the box is: <span id="box-sides"></span> </p>  
+
+        <hr>
+
+        <input type="number" name="side" id="dice" placeholder=" Enter box side">    
+        <button id="btn" onclick="calculateVolume(dice)">Dice Volume</button>
+        <button id="btn" onclick="calculateSidesLength(dice)">Dice Sides</button>      
+
+        <p>The volume of the cube is: <span id="dice-volume"></span> </p>
+        <p>The length of the sides of the cube is: <span id="dice-sides"></span> </p>
+    </div>
+        
+</body>
+</html>

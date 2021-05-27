@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.lbslider.js"></script>
+    <style>
+        .slider {
+            position:relative;
+            width:450px;
+            margin:auto;
+            }
+
+        ul {
+            margin:0;
+            padding:0;
+        }
+
+        ul li {
+            list-style:none;
+            text-align:center;
+        }
+
+        ul li span {
+            display: inline-block;
+            vertical-align:middle;
+            width:100px;
+            height:100px;
+            background:black;
+        }
+
+        .slider-arrow {
+            position:absolute;
+            top:40px;
+            width:20px;
+            height:20px;
+            background:black;
+            color:#fff;
+            text-align:center;
+            text-decoration:none;
+            border-radius:50%;
+        }
+        .sa-left {
+            left:10px;
+        }
+        .sa-right {
+            right:10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="slider">
+        <ul>
+            <li> Your Content 1 </li>
+            <li> Your Content 2 </li>
+            <li> Your Content 3 </li>
+            <li> Your Content 4 </li>
+            <li> Your Content 5 </li>
+        </ul>
+    </div>
+    <a href="#" class="slider-arrow sa-left">&lt;</a>
+    <a href="#" class="slider-arrow sa-right">&gt;</a>
+
+        
+
+    <script>
+jQuery('.slider').lbSlider({
+    leftBtn:'.sa-left',// left button selector
+    rightBtn:'.sa-right',// right button selector
+    visible: 3,// visible elements quantity
+    autoPlay:true,// autoscroll
+    autoPlayDelay: 10// delay of autoscroll in seconds
+});
+</script>
+
+</body>
+</html>

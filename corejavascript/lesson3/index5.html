@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index5 - querySelectorAll</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <p name="par">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non et molestiae eveniet voluptatum. Atque quasi nisi vero facilis eius quibusdam rerum nesciunt deleniti quam voluptatem delectus, sed aspernatur fuga facere.</p>
+    <p class="klasa1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid omnis similique odit! Beatae ad fugit deserunt? Placeat, perferendis dolorum necessitatibus, nobis ab magnam optio architecto, fugit dicta ea error ratione.</p>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam sapiente adipisci obcaecati doloremque voluptatibus ipsam modi quo accusantium, ea nihil, itaque beatae, quaerat eveniet expedita illum architecto molestias aut excepturi.</div>
+    <p data-x="5" data-ime="Bosko" data-email="bbosko@skola.com">Ovo je karakteristican paragraf</p>
+    <p data-x="5" data-ime="Pera" data-email="bbosko@skola.com">Ovo je karakteristican paragraf</p>
+    <p data-x="5" data-ime="Laza" data-email="bbosko@skola.com">Ovo je karakteristican paragraf</p>
+
+</body>
+</html>
+<script>
+    function uradi(){
+        //let a=document.getElementsByTagName("div");
+        let a=document.querySelectorAll("div");
+        a[0].style.color="red";
+        //let b=document.getElementsByClassName("klasa1");
+        let b=document.querySelectorAll(".klasa1");
+        b[0].style.backgroundColor="lightgray";
+        //let c=document.getElementsByName("par");
+        let c=document.querySelectorAll("[name=par]");
+        c[0].style.border="2px solid black";
+        let d=document.querySelectorAll("[data-ime]");
+        for(i=0;i<d.length;i++)
+            d[i].style.color="green";
+    }
+</script>

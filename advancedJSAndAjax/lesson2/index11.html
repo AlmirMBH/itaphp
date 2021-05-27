@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index9</h1>
+    <button id='d1'>Promeni klasu 1</button> <button id='d2'>promeni klasu 2</button> <button id='d3'>promeni klasu 1 i 2</button>
+    <div class="klasa1">ovo je prvi div</div>
+    <div class="klasa1 klasa2">ovo je drugi div</div>
+    <p class="klasa1">Ovo je prvi paragraf</p>
+    <p>Ovo je DRUGI paragraf</p>
+    <p class="klasa2">Ovo je TRECI paragraf</p>
+    <p class="klasa2">Ovo je CETVRTI paragraf</p>
+    <hr>
+    <div id="odgovor">Ovde ide odgovor</div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+       $("#d1").click(function(){
+           $(".klasa1").css("font-size", "2em");
+       })
+       $("#d2").click(function(){
+           $(".klasa2").css("color", "red");
+       })
+       $("#d3").click(function(){
+           $(".klasa2.klasa1").css("background-color", "aqua");
+       })
+    })
+    
+</script>

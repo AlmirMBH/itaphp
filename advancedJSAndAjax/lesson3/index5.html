@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Index4</h1>
+    <button id="d1" >Klikni za .load() ceo html</button>
+    <button id="d2" >Klikni za .load() samo div</button>
+    <button id="d3" >Klikni za .load() h1 i p</button>
+    <hr>
+    <div id="odgovor" style="background-color: aqua;">Ovo je originalni tekst</div>
+</body>
+</html>
+<script>
+    $(function(){
+        //$("div").load("test.txt");
+        $("#d1").click(function(){
+            $("#odgovor").load("test.html");
+        })
+        $("#d2").click(function(){
+            $("#odgovor").load("test.html #mojDiv");
+        })
+        $("#d3").click(function(){
+            $("#odgovor").load("test.html h1, p");
+        })
+        
+    })
+</script>

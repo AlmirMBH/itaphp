@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Properties</h1>
+    <button id="btn1">Change class 1</button>
+    <button id="btn2">Change class 2</button>
+    <button id="btn3">Change both classes</button>
+    <hr>
+    <div class="class1 class2">First div</div>
+    <br>
+    <div class="class2">Second div</div>
+    <p class="class1">Paragraph 1</p>
+    <p class="class2">Paragraph 2</p>
+    <p class="class1">Paragraph 3</p>
+    <p class="class2">Paragraph 4</p>
+    <p class="class1 class2">Paragraph 5</p>
+    <hr>
+
+    <div id="message"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){       
+        $("#btn1").click(function(){
+            $(".class1").css({"color":"blue", "background-color":"grey", "width":"200px", "padding":"4px"});
+        });
+
+        $("#btn2").click(function(){
+            $(".class2").css({"color":"green", "background-color":"brown", "width":"200px", "padding":"4px"});
+        });
+        
+        $("#btn3").click(function(){
+            //$(".class2.class1").css("color", "purple");
+            $(".class2.class1").css({"color":"yellow", "background-color":"blue", "width":"200px", "padding":"4px"});
+            //$(".class2").css({"color":"yellow", "background-color":"blue", "width":"200px", "padding":"4px"});
+        });
+
+    });
+</script>

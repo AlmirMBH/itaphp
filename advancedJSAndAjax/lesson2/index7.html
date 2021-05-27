@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index7</h1>
+    <table>
+        <tr>
+            <th>r.br</th>
+            <th>ime</th>
+            <th>prezime</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bosko</td>
+            <td>Bogojevic</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Pera</td>
+            <td>Peric</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Bosko</td>
+            <td>Bogojevic</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Pera</td>
+            <td>Peric</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Bosko</td>
+            <td>Bogojevic</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Pera</td>
+            <td>Peric</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Bosko</td>
+            <td>Bogojevic</td   >
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Pera</td>
+            <td>Peric</td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("tr:odd").css("background-color", "lightgray")
+        $("tr:even").css("background-color", "gray")
+        $("tr").mouseenter(function(){
+            $(this).css("background-color", "aqua")
+        })
+        $("tr").mouseleave(function(){
+            $(this).css("background-color", "white")
+        })
+    })
+</script>

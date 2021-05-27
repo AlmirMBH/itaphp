@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Ajax</title>
+</head>
+<body>
+    <h1>Binary data</h1>
+    <form action="" method="" id="form">
+        <input type="text" name="name" id="name" placeholder="Enter your name">
+        <input type="text" name="surname" id="surname" placeholder="Enter your surname">
+        <button type="button">Invoke ajax method</button>
+    </form>
+    <hr>
+    <id id="message">Info message</id>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({                
+                url: "validation.php",                
+                type:"POST", // get not working
+                data: new FormData(document.getElementById("form")),
+                contentType:false, 
+                cache:false, 
+                processData:false,
+                success:function(response){
+                    let output = JSON.parse(response);
+                    if(output.error == ""){
+                        $("#message").html(output.data);    
+                    }else{
+                        $("#message").html(output.error);
+                    }                    
+                },
+                error:function(xhr){ 
+                    $("#message").html(xhr.status + "<br>" + xhr.statusText);
+                },
+                beforeSend:function(){
+                    // comment this block of code to test server validation in validation.php
+                    if($("#name").val() == "" || $("#surname").val() == ""){
+                        alert("All fields are required!");
+                        return false;
+                    }
+                }
+            });
+        });
+    })
+</script>

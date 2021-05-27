@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Index11</h1>
+    <input type="text" id="ime" placeholder="Unesite ime"><br><br>
+    <input type="text" id="prezime" placeholder="Unesite prezime"><br><br>
+    <button id="d1" >Pozovi .get() metodu</button>
+    
+    <hr>
+    <div id="odgovor">Ovo je originalni tekst</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("#d1").click(function(){
+            let unetoIme=$("#ime").val();
+            let unetoPrezime=$("#prezime").val();
+            if(unetoIme=="" || unetoPrezime=="")
+            {
+                $("#odgovor").html("<span style='color:red'>Niste uneli sve podatke</span>");
+                return false;
+            }
+            $.get("ajax9.php", {ime:unetoIme, prezime:unetoPrezime}, function(response){
+                $("#odgovor").html(response);
+            })
+        })
+    })
+</script>

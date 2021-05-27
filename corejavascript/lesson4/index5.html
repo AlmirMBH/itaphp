@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index5</h1>
+    <form action="index5.html" method="get" onsubmit="return proveriFormu()">
+        <input type="password" name="lozinka" id="lozinka"><br><br>
+        <input type="password" name="potvrda" id="potvrda"><br><br>
+        <button>Klikni me</button>
+    </form>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    function proveriFormu(){
+        let l=document.querySelector("#lozinka");
+        let p=document.querySelector('#potvrda');
+        let o=document.querySelector("#odgovor");
+        if(l.value=="" || p.value==""){
+            o.innerHTML="Niste uneli podatke";
+            l.focus();
+            return false;
+        }
+        if(l.value!=p.value){
+            o.innerHTML="lozinka i potvrda nisu iste";
+            return false;
+        }
+        return true;
+    }
+</script>

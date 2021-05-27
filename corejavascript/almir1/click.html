@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate elements (border, background, capitals...)</title>
+</head>
+<body>
+    
+    <div id="section1">
+        <h1 id="title">Manipulate selectors</h1>
+        <p id="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+        <p id="paragraph1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+    
+
+
+        <!-- If you have more elements with the same ID, you will target only the first -->    
+        <button onclick="smallTitle('h1')">Small title</button>
+        <button onclick="bigTitle('h5')">Big title</button>
+        <button onclick="red('paragraph')">Red paragraph</button>
+        <button onclick="green('paragraph1')">Green paragraph</button>
+        <button onclick="border('section1')">Add border</button>
+    </div>
+    
+</body>
+</html>
+
+<script src="js/click.js"></script>

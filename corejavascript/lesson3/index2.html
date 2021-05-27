@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index2 - getElementsByTagName</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate porro dolor sapiente perspiciatis aut, distinctio vero. Ratione culpa, sit esse nostrum impedit maxime delectus, facere excepturi quasi quisquam doloremque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate porro dolor sapiente perspiciatis aut, distinctio vero. Ratione culpa, sit esse nostrum impedit maxime delectus, facere excepturi quasi quisquam doloremque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate porro dolor sapiente perspiciatis aut, distinctio vero. Ratione culpa, sit esse nostrum impedit maxime delectus, facere excepturi quasi quisquam doloremque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate porro dolor sapiente perspiciatis aut, distinctio vero. Ratione culpa, sit esse nostrum impedit maxime delectus, facere excepturi quasi quisquam doloremque!</p>
+</body>
+</html>
+<script>
+    function uradi(){
+        let elementi=document.getElementsByTagName("p");
+        elementi[0].innerHTML="ovo je prvi element u nizu";
+        elementi[2].style.color="red";
+        elementi[3].style.border="2px solid blue";
+        let dugmad=document.getElementsByTagName("button");
+        dugmad[0].innerHTML="Kliknut sam";
+    }
+</script>

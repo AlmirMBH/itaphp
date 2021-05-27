@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .klasa1{
+            margin:5px;
+            border:1px solid black;
+            width:300px;
+
+        }
+        .klasa2{
+            background-color: aqua;
+            font-weight:bold;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>index9</h1>
+    <button id='d1'>Dodaj klasu blue</button> <button id='d2'>Ukloni clasu blue</button> <button id='d3'>Menjaj klasu blue</button>
+    <p class="klasa1">Ovo je prvi paragraf</p>
+    <p>Ovo je DRUGI paragraf</p>
+    <p class="klasa2">Ovo je TRECI paragraf</p>
+    <p class="klasa2">Ovo je CETVRTI paragraf</p>
+    <hr>
+    <div id="odgovor">Ovde ide odgovor</div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+       $("#d1").click(function(){
+           $("p").addClass('blue');
+       })
+       $("#d2").click(function(){
+           $("p").removeClass('blue');
+       })
+       $("#d3").click(function(){
+           $("p").toggleClass('blue');
+       })
+    })
+    
+</script>

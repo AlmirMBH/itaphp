@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index5</h1>
+    <div>
+        <p>Ovo je PRVI paragraf</p>
+        <p>Ovo je DRUGI paragraf</p>
+        <p>Ovo je TRECI paragraf</p>
+        <p>Ovo je CETVRTI paragraf</p>
+    </div>
+    <hr>
+    <div id="odgovor">Ovde ide odgovor</div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("p").click(function(){
+            let tekst=$(this).html();
+            $("#odgovor").html(tekst);
+        })
+    })
+</script>

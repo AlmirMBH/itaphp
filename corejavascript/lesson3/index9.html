@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index 9 - rad sa nizom podataka</h1>
+    <button onclick="uradi()">Klikni za prikaz</button>
+    <hr>
+    <div id="odgovor" style="border:2px solid black; padding:5px"></div>
+    <hr>
+    <div id="prikaz"></div>
+</body>
+</html>
+<script>
+    let osobe=[
+        {ime:"Bosko", prezime:"Bogojevic", email:"bbosko@skola.com", status:"Administrator"},
+        {ime:"Pera", prezime:"Peric", email:"aaao@skola.com", status:"Urednik"},
+        {ime:"Laza", prezime:"Lazic", email:"bbb@skola.com", status:"Korisnik"},
+        {ime:"Mile", prezime:"Dizna", email:"ccc@skola.com", status:"Korisnik"},
+        {ime:"Cane", prezime:"Kurbla", email:"ddd@skola.com", status:"Korisnik"}
+    ];
+    function uradi(){
+        let parent=document.querySelector("#odgovor");
+        let prikaz=document.querySelector("#prikaz");
+        for(i=0;i<osobe.length;i++){
+            div=document.createElement("div");
+            div.setAttribute("data-ime", osobe[i].ime);
+            div.setAttribute("data-prezime", osobe[i].prezime);
+            div.setAttribute("data-email", osobe[i].email);
+            div.setAttribute("data-status", osobe[i].status);
+            div.innerHTML=i+": "+osobe[i].ime+" "+osobe[i].prezime;
+            div.onclick=function (){
+                //alert(this.getAttribute("data-ime"));
+                prikaz.innerHTML=this.getAttribute("data-ime") + " " + this.getAttribute("data-prezime") + " (" + this.getAttribute("data-email") + " " +this.getAttribute("data-status")+")";
+            }
+            div.onmouseenter=function(){
+                this.style.backgroundColor="lightgray";
+                this.style.cursor="pointer";
+            }
+            div.onmouseleave=function(){
+                this.style.backgroundColor="white";
+            }
+            parent.appendChild(div);
+        }
+    }
+</script>

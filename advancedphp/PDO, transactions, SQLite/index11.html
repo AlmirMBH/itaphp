@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index11</h1>
+</body>
+</html>
+<script>
+class MK{
+    constructor(a, b){
+        this.x=(a=="" || a==null)?0:parseInt(a);
+        this.y=(b=="" || b==null)?0:parseInt(b);
+        this.sabiranje=mojZbir;
+    }
+    
+    oduzimanje(){
+        return this.x-this.y;
+    }
+}
+
+function mojZbir(){
+    return this.x+this.y;
+}
+
+let obj=new MK(4, 6);
+document.write("Sabiranje: "+obj.sabiranje()+"<br>");
+document.write("Oduzimanje: "+obj.oduzimanje()+"<br>");
+</script>

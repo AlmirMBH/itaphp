@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .section{
+            background-color: blanchedalmond;
+            padding: 20px;
+            width: 300px;
+        }
+    </style>
+    <title>Asynchronous</title>
+</head>
+<body>
+
+    <h1>GET Method</h1>
+    <!-- INPUT FIELDS ARE NOT USED WITH HARD-CODED FUNCTIONS, USE BUTTON ONLY -->
+    <input type="text" name="name" id="name" placeholder="Enter your name">
+    <input type="text" name="surname" id="surname" placeholder="Enter your surname">
+    <button id="btn" data-file='log.txt'>Ajax</button>    
+    <hr>
+    <div id="message" class="section">The original text</div>
+
+</body>
+</html>
+
+<script>
+    // LOAD FILE
+    // $(function(){
+    //    $("#btn").click(function(){
+    //        $.get("test.php", function(response){
+    //             $("#message").html(response);
+    //        })
+    //    });
+    // });
+
+    // HARD-CODED FUNCTION - GET METHOD    
+    // $(function(){
+    //    $("#btn").click(function(){    
+    //         $.get("getmethod.php?name=Almir&surname=Mustafic", function(response){
+    //             $("#message").html(response);
+    //        })
+    //    });
+    // });    
+
+    // HARD CODED FUNCTION WITH ANONYMOUS OBJECT - GET METHOD
+    // $(function(){
+    //    $("#btn").click(function(){    
+    //         $.get("getmethod.php", {name:"Almir", surname:"Mustafic"}, function(response){
+    //             $("#message").html(response);
+    //        })
+    //    });
+    // });
+
+    $(function(){
+       $("#btn").click(function(){   
+           let inputName = $("#name").val();
+           let inputSurname = $("#surname").val();
+           
+            if(inputName == "" || inputSurname == ""){
+                $("#message").html("All data required!");
+                return false;
+            }else{
+                $.get("getpostmethod.php", {name:inputName, surname:inputSurname}, function(response){
+                    $("#message").html(response);
+                })
+            }            
+       });
+    });
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index14</h1>
+</body>
+</html>
+<script>
+class MK{
+    constructor(a, b){
+        this.x=parseInt(a);
+        this.y=parseInt(b);
+        this.sabiranje=mojZbir;
+    }
+    oduzimanje(){
+        return this.x-this.y;
+    }
+}
+function mojZbir(){
+    return this.x+this.y;
+}
+class MK2{
+    constructor(a, b){
+        this.x=a;
+        this.y=b;
+        this.sabiranje=mojZbir;
+    }
+}
+let a=prompt("Unesite a?");
+let b=prompt("Unesite b?");
+let obj=new MK(a, b);
+let obj2=new MK2(a,b);
+document.write("Sabiranje: "+obj.sabiranje()+"<br>");
+document.write("Sabiranje: "+obj2.sabiranje()+"<br>");
+document.write("Oduzimanje: "+obj.oduzimanje()+"<br>");
+</script>

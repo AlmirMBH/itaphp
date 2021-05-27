@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .klasa2{
+            background-color: aqua;
+            font-weight:bold;
+            height:100px
+        }
+
+    </style>
+</head>
+<body>
+    <h1>index9</h1>
+    <select name="jezik" id="jezik">
+        <option value="sr">Srpski</option>
+        <option value="en">English</option>
+        <option value="es">Espana</option>
+    </select>
+    <hr>
+    <div data-sr="moj div 1" data-en="my div one" data-es="Te Quero mucho">moj div 1</div>
+    <div data-sr="moj div 2" data-en="my div two" data-es="Yo soi to madre">moj div 2</div>
+    <div data-sr="moj div 3" data-en="my div three">moj div 3</div>
+    <div data-sr="moj div 4" data-en="my div four">moj div 4</div>
+    
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#jezik").change(function(){
+            //alert($(this).val());
+            let jezik=$(this).val();
+            $("[data-"+jezik+"]").each(function(){
+                let tekst=$(this).data(jezik);
+                $(this).html(tekst);
+            })
+        })
+     
+    })
+    
+</script>

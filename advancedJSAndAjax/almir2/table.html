@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Filters</h1>
+
+    <table border="1px solid black;">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>        
+        <tr>
+            <td>1</td>
+            <td>Almir</td>
+            <td>Mustafic</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nadira</td>
+            <td>Mustafic</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Samer</td>
+            <td>Sacic</td>
+        </tr>
+
+    </table>
+
+    <hr>
+    <div id="message"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        //$("tr:odd").css("background-color", "red");
+        //$("tr:even").css("background-color", "grey");
+
+        $("tr").mouseover(function(){
+            $(this)
+            .css("background-color", "black")
+            .css("color", "white");
+        });
+
+        $("tr").mouseleave(function(){
+            $(this)
+            .css("background-color", "")
+            .css("color", "black");
+        });
+        
+        
+    });
+</script>

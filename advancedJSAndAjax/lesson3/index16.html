@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Index12</h1>
+    <input type="number" step="1" value="10" id="op1"><br><br>
+    <input type="number" step="1" value="5" id="op2"><br><br>
+    <select name="operacija" id="operacija">
+        <option value="0">--Izaberite operaciju--</option>
+        <option value="sabiranje">sabiranje</option>
+        <option value="oduzimanje">oduzimanje</option>
+        <option value="mnozenje">mnozenje</option>
+        <option value="deljenje">deljenje</option>
+    </select><br><br>
+    <button id="d1">Izracunaj</button>
+    <hr>
+    <div id="odgovor">Ovo je originalni tekst</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("#d1").click(function(){
+            let op1=$("#op1").val();
+            let op2=$("#op2").val();
+            let operacija=$("#operacija").val();
+            $.post("ajax16.php?izbor="+operacija, {op1:op1, op2:op2}, function(response){
+                //$("#odgovor").html(response);
+                let odg=JSON.parse(response);
+                if(odg.greska!="")
+                {
+                    $("#odgovor").html("<span style='color: red'>"+odg.greska+"</span>");
+                }
+                else
+                {
+                    $("#odgovor").html("<span style='color: green'>"+odg.podatak+"</span>");
+                }
+            })
+        })
+    })
+</script>

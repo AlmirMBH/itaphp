@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Include JQuery, append</h1>
+    <div id="paragraph-section" style="background-color: aqua;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, magnam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, magnam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, magnam.</p>
+    </div>    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="js/jquery-3.6.0.js"></script> -->
+</body>
+</html>
+<script>
+    // this function is not necessary here, but it would be a must, if we moved the code in the header
+    $(document).ready(function(){ 
+        //let title = document.querySelector("h1");
+        //title.innerHTML = "New title";
+        //let paragraph = $("<p style='color:blue'>This is a random text</p>");
+        let paragraph = $("<p></p>")
+            .html("This is a random text")
+            .css("background-color", "pink")
+            .css("border", "1px solid green");
+        $("#paragraph-section").append(paragraph);
+    });
+</script>

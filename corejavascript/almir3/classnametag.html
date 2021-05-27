@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .class1{
+            border: 2px solid blue;
+            margin: 2px;
+            padding: 2px;
+            width: 400px;
+        }
+    </style>
+    <title>TagName, Name, Class</title>
+</head>
+<body>
+    <h1>GetElementsByTagName</h1>
+    <button onclick="execute()">Click</button>
+    <hr>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+
+    <h1>GetElementsByName</h1>
+    <button onclick="executeName()">Click</button>
+    <hr>
+    <p name="par">Lorem ipsum dolor sit amet.</p>
+    <p name="par">Lorem ipsum dolor sit amet.</p>
+    <p name="par">Lorem ipsum dolor sit amet.</p>
+    <p name="par">Lorem ipsum dolor sit amet.</p>
+    <hr>
+    <div name="sect">Lorem ipsum dolor sit amet.</div>
+    <div name="sect">Lorem ipsum dolor sit amet.</div>
+    <div name="sect">Lorem ipsum dolor sit amet.</div>
+
+
+    <h1>GetElementsByClassName</h1>
+    <button onclick="executeClassName()">Click</button>    
+    <hr>
+    <p class="class1">Lorem ipsum dolor sit amet.</p>    
+    <div class="class2">Lorem ipsum dolor sit amet.</div>
+    <span class="class1">Lorem ipsum dolor sit amet.</span>    
+
+    <script src="js/classnametag.js"></script>
+</body>
+</html>

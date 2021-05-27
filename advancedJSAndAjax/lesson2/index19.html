@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .klasa2{
+            background-color: aqua;
+            font-weight:bold;
+            height:100px
+        }
+
+    </style>
+</head>
+<body>
+    <h1>index9</h1>
+    <button id='d3'>SlideToggle</button> <button id='d4'>SlideToggle istovremeno</button>
+    <hr>
+    <p class="klasa2" id="p1">Ovo je TRECI paragraf</p>
+    <p class="klasa2" id="p2">Ovo je TRECI paragraf</p>
+    
+    <div>Ovo je div</div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+      
+      $("#d3").click(function(){
+        $("#p1").slideToggle(2000, function(){
+            $("#p2").slideToggle(2000);
+        });
+        
+      })
+      $("#d4").click(function(){
+        $("#p1").slideToggle(2000)
+        $("#p2").slideToggle(2000);
+      })
+    })
+    
+</script>

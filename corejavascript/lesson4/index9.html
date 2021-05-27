@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index9</h1>
+    <select name="godine" id="godine" onchange="proveriSelect()">
+        <option value="0">--Izaberite godine--</option>
+        <option value="1"><18</option>
+        <option value="2">izmedju 18 i 44</option>
+        <option value="3">Preko 44</option>
+    </select>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    function proveriSelect(){
+        let s=document.querySelector("#godine");
+        let o=document.querySelector("#odgovor");
+        switch(s.value){
+            case "1": 
+                o.innerHTML="idi pitaj mamu i tatu!!!!";
+            break;
+            case "2": 
+                o.innerHTML="Ti si covek za nas";
+            break;
+            case "3": 
+                o.innerHTML="idi igraj sah u parku!!!!";
+            break;
+            default: o.innerHTML="";
+        }
+    }
+</script>

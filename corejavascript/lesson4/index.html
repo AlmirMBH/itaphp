@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index</h1>
+    <button onclick="uradi()">Klikni za formu</button>
+    <hr>
+</body>
+</html>
+<script>
+    function uradi(){
+        if(document.querySelector("#mojaForma"))return false;
+        //Forma
+        let forma = document.createElement("form");
+        forma.action="index.html";
+        forma.method="post";
+        forma.id="mojaForma";
+        forma.enctype="multipart/form-data";
+        //Dugme
+        let dugme=document.createElement("button");
+        dugme.type="submit";
+        dugme.innerHTML="Klikni me za slanje podataka";
+        let tekst=document.createElement("input");
+        tekst.type="text";
+        /*tekst.min=10;
+        tekst.max=50;
+        tekst.step=10;*/
+        //tekst.value=20;
+        tekst.value="2021-03-12";
+        tekst.id="mojTekst";
+        tekst.name="mojTekst";
+        tekst.placeholder="Unesite tekst";
+        //textarea
+        let a=document.createElement("textarea");
+        a.name="tekstarea";
+        a.id="tekstarea";
+        a.cols=20;
+        a.rows=5;
+        a.placeholder="Unesite komentar";
+        //Check box
+        let c=document.createElement("input");
+        c.type="checkbox";
+        c.id="mojCheck";
+        c.name="mojCheck";
+        c.value="5";
+        c.checked=true;
+        //label
+        let l=document.createElement("label");
+        l.innerHTML="Da li se slazete?";
+        //select
+        let s=document.createElement("select");
+        s.name="mojSelect";
+        s.id="mojSelect";
+        //Opcije
+        s.appendChild(new Option("--Izaberite opciju--", "0"));
+        let o=document.createElement("option");
+        o.value="1";
+        o.innerHTML="Opcija 1";
+        s.appendChild(o);
+        s.appendChild(new Option("Opcija 2", "2"));
+        s.appendChild(new Option("Opcija 3", "3"));
+        //radio
+        let r1=document.createElement("input");
+        r1.type="radio";
+        r1.name="grupa";
+        r1.value="m";
+        r1.checked=true;
+        let r2=document.createElement("input");
+        r2.type="radio";
+        r2.name="grupa";
+        r2.value="z";
+        let r3=document.createElement("input");
+        r3.type="radio";
+        r3.name="grupa";
+        r3.value="d";
+        //label
+        let l1=document.createElement("label");
+        l1.innerHTML="Muski";
+        //label
+        let l2=document.createElement("label");
+        l2.innerHTML="Zenski";
+        //label
+        let l3=document.createElement("label");
+        l3.innerHTML="Dzedaj";
+        //Pravljenje file input el
+        let f=document.createElement("input");
+        f.type="file";
+        f.name="mojFile";
+        f.id="mojFile";
+
+        //////////////////
+        //Dodavanje elemenata formi
+        forma.appendChild(tekst);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(a);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(c);
+        forma.appendChild(l);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(s);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(r1); forma.appendChild(l1);
+        forma.appendChild(r2); forma.appendChild(l2);
+        forma.appendChild(r3); forma.appendChild(l3);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(f);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(dugme);
+
+
+        //////////////
+        //Dodavanje forme body-ju
+        document.body.appendChild(forma);
+    }
+</script>

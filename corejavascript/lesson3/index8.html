@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="promeniJezik('eng')">English</button>
+    <button onclick="promeniJezik('srp')">Srpski</button>
+    <!--<h1 data-eng="Multilanguage" data-srp="Visejezicnost">Visejezicnost</h1>
+    <div data-eng="Text in English" data-srp="Tekst na srpskom">Tekst na srpskom</div>
+    <p data-eng="Text in English in paragraph" data-srp="Tekst na srpskom u paragrafu">Tekst na srpskom u paragrafu</p>-->
+
+</body>
+</html>
+<script>
+    kreirajSve();
+    function kreirajSve(){
+        let h1=document.createElement("h1");
+        h1.setAttribute("data-eng", "Multilanguage");
+        h1.setAttribute("data-srp", "Visejezicnost");
+        h1.innerHTML=h1.getAttribute("data-srp");
+        document.body.appendChild(h1);
+        let div=document.createElement("div");
+        div.setAttribute("data-eng", "Text in English");
+        div.setAttribute("data-srp", "Tekst na srpskom");
+        div.innerHTML=div.getAttribute("data-srp");
+        document.body.appendChild(div);
+        let p=document.createElement("p");
+        p.setAttribute("data-eng", "Text in English in paragraph");
+        p.setAttribute("data-srp", "Tekst na srpskom u paragrafu");
+        p.innerHTML=p.getAttribute("data-srp");
+        document.body.appendChild(p);
+    }
+    function promeniJezik(jezik){
+        let sve=document.querySelectorAll("[data-eng]");
+        for(i=0;i<sve.length;i++)
+        {
+            let tekst=sve[i].getAttribute("data-"+jezik);
+            sve[i].innerHTML=tekst;
+        }
+    }
+</script>

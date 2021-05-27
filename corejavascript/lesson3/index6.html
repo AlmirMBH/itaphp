@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index6 - childNodes</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <div id='mojDiv'>
+        <p>Ovo je paragraf 1</p>
+        <p>Ovo je paragraf 2</p>
+    </div>
+    <p>Ovo je paragraf 3</p>
+</body>
+</html>
+<script>
+    function uradi(){
+        //let p=document.getElementsByTagName("p");
+        /*let div=document.getElementById("mojDiv");
+        let p=div.childNodes;
+        alert(p.length);*/
+        let p=document.querySelectorAll("div > p");
+        for(i=0;i<p.length;i++)
+            p[i].style.color="red";
+    }
+    
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>index4</h1>
+    <input type="text" id="ime" placeholder="Unesite ime"><br><br>
+    <input type="text" id="prezime" placeholder="Unesite prezime"><br><br>
+    <button>Klikni za .ajax() metodu</button>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:"ajax/obrada4.php",
+                type: "GET",
+                data: {ime: $("#ime").val(), prezime:$("#prezime").val()},
+                success:function(response){
+                    $("#odgovor").html(response);
+                },
+                error:function(xhr){
+                    $("#odgovor").html(xhr.status + "<br>" + xhr.statusText);
+                },
+                beforeSend:function(){
+                    //alert("Ovo se dogadja pre slanja asinhronog zahteva");
+                    if($("#ime").val()=="" || $("#prezime").val()==""){
+                        $("#odgovor").html("Svi podaci su obavezni");
+                        return false;
+                    }
+                }
+            })
+        })
+    })
+</script>

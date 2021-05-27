@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>    
+</head>
+<body>
+
+    <section id="functionsWrite">
+        <h1>Functions with write</h1>
+        <script>
+            function write(text1 = "Default text 1!", text2 = "Default text 2!"){
+                document.write("<br>This is the function contents. <br>" + text1 + "<br>" + text2 + "<br>");
+            }        
+            write("Function text!");
+            write();
+        </script>
+    </section>
+
+
+    <section id="functionsReturn">
+        <h1>Functions with return</h1>
+        <script>
+            function write(text1 = "Default text 1!", text2 = "Default text 2!"){
+                return "<br>This is the function contents. <br>" + text1 + "<br>" + text2 + "<br>";
+            }
+        
+            document.write(write("Function text!"));
+            document.write( write());
+            document.write("<br>")
+
+            function divide(number1, number2){
+                if(number2 === 0){
+                    return false;
+                }else{
+                    return (number1/number2);
+                }
+            }
+
+            let divideNumbers = divide(1, 0);
+            if(divideNumbers !== false){
+                document.write("The result is: " + divideNumbers);
+            }else{
+                document.write("Division with 0 not allowed!");
+            }
+        </script>
+    </section>
+</body>
+</html>

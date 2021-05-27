@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>File validation</h1>
+        <form action="formvalidation.html" method="get" onsubmit="return validate()" id="form">
+        <!--opcija 2 <form action="formvalidation.html" method="get" onsubmit="return false" id="form"> -->
+            <input type="text" name="name" id="name" placeholder="Enter name"><br>
+            <input type="text" name="surname" id="surname" placeholder="Enter surname"><br>
+            <button>Click</button>
+            <!--opcija 2 <button onclick="validate()">Click</button> -->
+        </form>
+
+        <div id="message">Test</div>
+    
+    <script src="js/formvalidation.js"></script>
+</body>
+</html>

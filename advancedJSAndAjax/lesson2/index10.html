@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index9</h1>
+    <button id='d1'>Promena svojstava</button> <button id='d2'>Citanje svojstava</button>
+    <div>ovo je prvi div</div>
+    <div>ovo je drugi div</div>
+    <p>Ovo je prvi paragraf</p>
+    <p>Ovo je DRUGI paragraf</p>
+    <p>Ovo je TRECI paragraf</p>
+    <p>Ovo je CETVRTI paragraf</p>
+    <hr>
+    <div id="odgovor">Ovde ide odgovor</div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#d1").click(function(){
+            //$("div").css("color",'white').css("background-color", "red").css("margin", "5px");
+            $("div").css({"color":"white", "background-color":"red","margin":'5px', "border":"2px solid blue"})
+        })
+        $("#d2").click(function(){
+            //$("div").css("color",'white').css("background-color", "red").css("margin", "5px");
+            let stil=$("div").css("border");
+            $("#odgovor").text(stil);
+
+        })
+    })
+</script>

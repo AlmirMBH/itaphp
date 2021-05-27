@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index7</h1>
+    <form action="index7.html" method="get" onsubmit="return proveriFormu()" id="forma">
+        <input type="text" id="ime" name="ime"><br><br>
+        <input type="checkbox" value="1" id="potvrda" name="potvrda" onclick="proveriDugme()"> da li se slazete?<br><br>
+        <button id="dugme" disabled>Klikni me</button>
+    </form>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    function proveriFormu(){
+        let ime=document.querySelector("#ime");
+        let o=document.querySelector("#odgovor");
+        let forma=document.querySelector("#forma");
+        if(ime.value==""){
+            o.innerHTML="Niste uneli ime";
+            ime.focus();
+            return false;
+        }
+        return true;
+    }
+    function proveriDugme(){
+        let c=document.querySelector("#potvrda");
+        let d=document.querySelector("#dugme");
+        if(c.checked) d.removeAttribute("disabled");
+        else d.setAttribute("disabled", "disabled");
+    }
+</script>

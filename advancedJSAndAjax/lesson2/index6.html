@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index6</h1>
+    <button id="d1">Prvi</button> <button id="d2">Poslednji</button> <button id="d3">Parni</button> <button id="d4">Neparni</button>
+    <hr>
+    <div>
+        <p>Ovo je PRVI paragraf</p>
+        <p>Ovo je DRUGI paragraf</p>
+        <p>Ovo je TRECI paragraf</p>
+        <p>Ovo je CETVRTI paragraf</p>
+    </div>
+    <hr>
+    <div id="odgovor">Ovde ide odgovor</div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#d1").click(function(){
+            $("p:first").css("color", "red");
+        })
+        $("#d2").click(function(){
+            $("p:last").css("color", "green");
+        })
+        $("#d3").click(function(){
+            $("p:even").css("background-color", "aqua");
+        })
+        $("#d4").click(function(){
+            $("p:odd").css("background-color", "lightgray");
+        })
+    })
+</script>

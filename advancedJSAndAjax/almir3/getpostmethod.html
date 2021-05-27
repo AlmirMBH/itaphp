@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .section{
+            background-color: blanchedalmond;
+            padding: 20px;
+            width: 300px;
+        }
+    </style>
+    <title>Asynchronous</title>
+</head>
+<body>
+
+    <h1>POST and GET Methods</h1>
+    <input type="number" step="1" value="10" id="op1"><br>
+    <input type="number" step="1" value="5" id="op2"><br>
+    <select name="operation" id="operation">
+        <option value="0">-- Select operation --</option>
+        <option value="Add">+</option>
+        <option value="Subtract">-</option>
+        <option value="Multiply">*</option>
+        <option value="Divide">/</option>
+    </select><br>
+    <button id="btn">Calculate</button>
+    <hr>
+    <div id="message" class="section">The original text</div>
+
+</body>
+</html>
+
+<script>
+    $(function(){
+       $("#btn").click(function(){
+            let op1 = $("#op1").val();
+            let op2 = $("#op2").val();
+            let operation = $("#operation").val();
+            // EXAMPLE: CRUD operations e.g. delete can be sent via get, while data can be sent via post
+           $.post("getpostmethod.php?operation=" + operation, {op1:op1, op2:op2}, function(response){
+               $("#message").html(response);
+           })
+       });
+    });
+</script>

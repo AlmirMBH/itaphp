@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select options</title>
+</head>
+<body>    
+    <h1>Select option, generate text in div</h1>
+    <input type="text" id="text" placeholder="Enter text"><br>
+    <select name="drop" id="dropdown">
+        <option value="div1">DIV1</option>
+        <option value="div2">DIV2</option>
+        <option value="div3">DIV3</option>
+    </select>
+    <br>
+    <button id="move" onclick="moveText()">Move</button>
+    <hr>
+
+    <div id="div1" style="border: solid 3px blue; padding:5px; margin:10px">Div1</div>
+    <div id="div2" style="border: solid 3px green; padding:5px; margin:10px">Div2</div>
+    <div id="div3" style="border: solid 3px red; padding:5px; margin:10px">Div3</div>
+    <hr>
+
+    <h1>Select car (this)</h1>
+    <select onchange="changeFunc(this.value)">
+    <!-- <select onchange="changeFunc(this)"> in this case we send an object with more data-->
+    <option>Opel</option>
+    <option>Fiat</option>
+    <option>Mercedes</option>
+    </select>
+    
+    <p id="message"></p>
+    <hr>
+
+    <h1>Key logger</h1>
+    <script type="text/javascript">
+        function displayunicode(e){
+            var unicode = e.keyCode ? e.keyCode : e.charCode
+            alert(unicode)
+        }
+        confirm("!!!");
+        </script>
+         
+        <form>
+        <input type="text" size="2" maxlength="1" onkeyup="displayunicode(event); this.select()" />
+        </form>
+
+</body>
+</html>
+<script src="js/select.js"></script>

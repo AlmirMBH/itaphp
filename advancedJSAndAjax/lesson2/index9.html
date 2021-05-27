@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>index9</h1>
+    <input type="text" id="lozinka"/><br><br>
+    <input type="text" id="ponovljena"/><br><br>
+    <button id="d1">Klikni me</button>
+    <hr>
+    <div id="odgovor"></div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#d1").click(function(){
+            let div=$("#odgovor");
+            let lozinka=$("#lozinka").val();
+            let ponovljena=$("#ponovljena").val();
+            if(lozinka=="" || ponovljena=="")
+            {
+                div.html("niste uneli sve podatke");
+                $("#lozinka").focus();
+                return false;
+            }
+            if(lozinka==ponovljena)
+                div.html("Uspesna provera");
+            else
+                div.html("NEUSPESNA provera");
+        })
+    })
+</script>

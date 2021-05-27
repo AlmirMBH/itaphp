@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Index7</h1>
+    <button id="d1" data-fajl='korisnici.log'>Klikni za .load() metodu korisnici</button>
+    <button id="d2" data-fajl='logovanjsdadasd.log'>Klikni za .load() metodu logovanje</button>
+    <button id="d3" data-fajl='proizvodi.log'>Klikni za .load() metodu proizvodi</button>
+    <hr>
+    <div style="background-color: aqua;">Ovo je originalni tekst</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $("div").load("logovi/"+$(this).data("fajl"), function(response, status, xhr){
+                if(status=="error")
+                    response = "GRESKA!!!!<br>"+xhr.status+"<br>"+xhr.statusText;
+                else
+                    response=response.split("\n").join("<br>");
+                $("div").html(response);
+            });
+        })
+    })
+</script>

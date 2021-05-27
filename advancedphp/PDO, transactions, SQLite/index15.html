@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index15</h1>
+</body>
+</html>
+<script>
+class MK{
+    constructor(a, b){
+        this.x=parseInt(a);
+        this.y=parseInt(b);
+        this.sabiranje=function(){
+            return this.x+this.y;
+        };
+        this.oduzimanje=function(){
+            return this.x-this.y;
+        }
+        this.mnozenje=function(){
+            return this.x*this.y;
+        }
+        this.deljenje=function(){
+            if(this.y==0) return "Nedozvoljeno deljenje nulom!!!!";
+            else return this.x/this.y;
+        }
+    }
+    
+}
+
+let a=prompt("Unesite a?");
+let b=prompt("Unesite b?");
+let obj=new MK(a, b);
+document.write("sabiranje: " + obj.sabiranje()+"<br>");
+document.write("oduzimanje: " + obj.oduzimanje()+"<br>");
+document.write("mnozenje: " + obj.mnozenje()+"<br>");
+document.write("deljenje: " + obj.deljenje()+"<br>");
+</script>

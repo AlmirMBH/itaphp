@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .spoljasnji{
+            margin:2px;
+            padding:2px;
+            display: inline-block;
+            height: 200px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>index7</h1>
+    <form action="" method="" id='forma' >
+        <input type="text" id="ime" name="ime" placeholder="Unesite ime"><br><br>
+        <input type="file" id="slika" name="slika"><br><br>
+        <button type="button">Klikni za .ajax() metodu</button>
+    </form>
+    
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:"ajax/obrada7.php",
+                type: "POST",
+                data: new FormData(document.getElementById('forma')),
+                contentType: false, 
+                cache: false, 
+                processData: false,
+                success:function(response){
+                    //$("#odgovor").html(response);
+                    let odgovor=JSON.parse(response);
+                    if(odgovor.greska!="") $("#odgovor").html("<span style='color:red'>"+odgovor.greska+'</span>');
+                    else{
+                        let slika="<div class='spoljasnji'><img src='slike/"+odgovor.podatak+"' height='180px'></div>";
+                        $("#odgovor").append(slika);
+                    } 
+
+                },
+                error:function(xhr){
+                    $("#odgovor").html(xhr.status + "<br>" + xhr.statusText);
+                },
+                beforeSend:function(){
+                    //alert("Ovo se dogadja pre slanja asinhronog zahteva");
+                    /*if($("#ime").val()=="" || $("#prezime").val()==""){
+                        $("#odgovor").html("Svi podaci su obavezni");
+                        return false;
+                    }*/
+                }
+            })
+        })
+    })
+</script>

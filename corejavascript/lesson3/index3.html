@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 name="par">index3 - getElementsByName</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <p name="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore ratione voluptatem a, iure praesentium quidem, dolor similique consectetur adipisci omnis eius corrupti dolores unde dignissimos suscipit debitis amet itaque.</p>
+    <p name="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore ratione voluptatem a, iure praesentium quidem, dolor similique consectetur adipisci omnis eius corrupti dolores unde dignissimos suscipit debitis amet itaque.</p>
+    <p name="ime">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore ratione voluptatem a, iure praesentium quidem, dolor similique consectetur adipisci omnis eius corrupti dolores unde dignissimos suscipit debitis amet itaque.</p>
+    <p name="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore ratione voluptatem a, iure praesentium quidem, dolor similique consectetur adipisci omnis eius corrupti dolores unde dignissimos suscipit debitis amet itaque.</p>
+    <hr>
+    <div name="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iure ducimus corporis ratione error autem nostrum accusantium odit eligendi pariatur, magni dolore illum repellendus minima at veritatis dicta, repudiandae doloribus?</div>
+    <div name="ime">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iure ducimus corporis ratione error autem nostrum accusantium odit eligendi pariatur, magni dolore illum repellendus minima at veritatis dicta, repudiandae doloribus?</div>
+    <div name="ime">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iure ducimus corporis ratione error autem nostrum accusantium odit eligendi pariatur, magni dolore illum repellendus minima at veritatis dicta, repudiandae doloribus?</div>
+</body>
+</html>
+<script>
+    function uradi(){
+        let p=document.getElementsByName("par");
+        let elementi=document.getElementsByName("ime");
+        alert("Elemenata p: "+p.length);
+        alert("Elemenata elementi: "+elementi.length);
+        for(i=0;i<p.length;i++)
+            p[i].style.color="red";
+        for(i=0;i<elementi.length;i++)
+        {
+            /*elementi[i].style.backgroundColor="lightgray";
+            elementi[i].style.margin="5px";
+            elementi[i].style.padding="5px";*/
+            elementi[i].style.cssText="background-color: lightgray; margin:5px; padding:5px;";
+        }
+            
+    }
+</script>

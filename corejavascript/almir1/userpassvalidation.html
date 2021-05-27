@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Username, pasword, image</title>    
+</head>
+<body>    
+    
+    <h1>Username, password length validation, warning image</h1>
+    <input type="text" id="username" placeholder="Enter username"><br><br>    
+    <button onclick="validate()">Submit</button>
+    <hr>
+    <div id="usermessage">Here</div>
+
+    <hr>
+    <input type="text" id="username2" onkeyup="validateLength()" placeholder="Enter username"> 
+    <img src="images/error.png" id="error-img" style="width: 15px;"><br><br>
+    <div id="usermessage2">Here</div>
+
+</body>
+</html>
+<script src="js/userpassvalidation.js"></script>

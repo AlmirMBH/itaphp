@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index8.html</h1>
+    <input type="checkbox" id="potvrda" name="potvrda" onclick="vidljivostForme()"> Da li zelite da ostavite komentar? <br><br>
+    <form action="index8.html" method="get" id="forma" onsubmit="return proveriFormu()" style="display: none;">
+        <input type="text" id="ime" name="ime"><br><br>
+        <textarea name="komentar" id="komentar" cols="20" rows="5"></textarea><br><br>
+        <button>Snimi komentar</button>
+    </form>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    let o=document.querySelector("#odgovor");
+    function proveriFormu(){
+        let ime=document.querySelector("#ime");
+        let komentar=document.querySelector("#komentar");
+        if(ime.value=="" || komentar.value==""){
+            o.innerHTML="Niste uneli sve potrebne podatke!!!";
+            return false;
+        }
+        return true;    
+    }
+    function vidljivostForme(){
+        let forma=document.querySelector("#forma");
+        let c=document.querySelector("#potvrda");
+        if(c.checked) forma.style.display="";
+        else forma.style.display="none";
+    }
+
+</script>

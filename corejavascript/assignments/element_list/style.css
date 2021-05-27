@@ -1,0 +1,19 @@
+#wrapper{
+    text-align: center;
+    margin: 50px auto;
+    border: 4px solid goldenrod;
+    width: 400px;
+    background-color: firebrick;
+    padding: 0 10px 0 10px;           
+}
+
+#title{
+    margin-bottom: 40px;
+}
+
+#message{
+    font-size: large;
+    font-weight: 600;
+    color: #ffffff;            
+    margin-bottom: 50px;
+}

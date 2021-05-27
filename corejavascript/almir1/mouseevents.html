@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 2</title>    
+</head>
+<body>
+    
+    <h1>Onclick, ondblclick, onmouseover, onmouseout, onmousemove</h1>
+    <div id="section1">
+        <h1 id="title" onclick="mouseClick()">Manipulate selectors 1</h1>
+        <h1 id="title1" onclick="alert('Clicked!')">Manipulate selectors 2</h1>
+
+        <p id="paragraph0">0) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+
+        <p style="color:red">Modify on double-click</p>
+        <p id="paragraph" ondblclick="mouseDblClick('paragraph')">1) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+
+        <p style="color:red">Modify on hoover and mouse out</p>
+        <p id="paragraph1" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)"> 2) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+
+        <p style="color:red">Modify on mouse move and mouse out</p>
+        <p id="paragraph2" onmousemove="onMouseMove('paragraph2')" onmouseout="onMouseOut(this)"> 3) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+
+        <p style="color:red">Replace content of a selector on click and double-click</p>
+        <p id="paragraph3" onclick="changeText('paragraph3')" ondblclick="replaceText('paragraph3')"> 4) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+
+        <p style="color:red">Replace content of a selector by content of another on click</p>
+        <p id="paragraph4" onclick="swapText('paragraph4', 'paragraph0')"> 5) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, odit?</p>
+    
+
+    </div>
+</body>
+</html>
+<script src="js/mouseevents.js"></script>

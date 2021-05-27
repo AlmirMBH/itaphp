@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>index6</h1>
+    <form action="" method="" id='forma' >
+        <input type="text" id="ime" name="ime" placeholder="Unesite ime"><br><br>
+        <input type="text" id="prezime" name="prezime" placeholder="Unesite prezime"><br><br>
+        <button type="button">Klikni za .ajax() metodu</button>
+    </form>
+    
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:"ajax/obrada5.php",
+                type: "POST",
+                data: new FormData(document.getElementById('forma')),
+                contentType: false, 
+                cache: false, 
+                processData: false,
+                success:function(response){
+                    //$("#odgovor").html(response);
+                    let odgovor=JSON.parse(response);
+                    if(odgovor.greska!="") $("#odgovor").html("<span style='color:red'>"+odgovor.greska+'</span>');
+                    else $("#odgovor").html("<span style='color:green'>"+odgovor.podatak+'</span>');
+
+                },
+                error:function(xhr){
+                    $("#odgovor").html(xhr.status + "<br>" + xhr.statusText);
+                },
+                beforeSend:function(){
+                    //alert("Ovo se dogadja pre slanja asinhronog zahteva");
+                    /*if($("#ime").val()=="" || $("#prezime").val()==""){
+                        $("#odgovor").html("Svi podaci su obavezni");
+                        return false;
+                    }*/
+                }
+            })
+        })
+    })
+</script>

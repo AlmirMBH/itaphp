@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index4</h1>
+    <form action="index4.html" method="get" onsubmit="return proveriFormu()" name="forma" id="forma">
+        <input type="text" name="ime" id="ime" placeholder="Unesite ime"><br><br>
+        <input type="text" name="prezime" id="prezime" placeholder="Unesite prezime"><br><br>
+        <button>Klikni me</button>
+    </form>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    function proveriFormu(){
+        let ime=document.querySelector("#ime");
+        let prezime=document.querySelector("#prezime");
+        let forma=document.querySelector("#forma");
+        let odgovor=document.querySelector("#odgovor");
+        if(ime.value==""){
+            odgovor.innerHTML="Niste uneli ime";
+            ime.focus();
+            return false;
+        }
+        if(prezime.value==""){
+            odgovor.innerHTML="Niste uneli prezime";
+            prezime.focus();
+            return false;
+        }
+        return true;
+    }
+</script>

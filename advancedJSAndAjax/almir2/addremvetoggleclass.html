@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .class1{
+            margin: 10px;
+            border: 2px solid blue;
+            width: 300px;
+            padding: 3px;
+        }
+
+        .class2{
+            background-color: aqua;
+            width: 300px;
+            font-weight: 700;
+            margin: 10px;
+            padding: 3px;
+        }
+
+        .blue{
+            color: blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Properties</h1>
+    <button id="btn1">Add class blue</button>
+    <button id="btn2">Remove class blue</button>
+    <button id="btn3">Modify class blue</button>
+    <hr>
+   
+    <p class="class1">Paragraph 1</p>
+    <p class="class2">Paragraph 2</p>
+    <p class="class1">Paragraph 3</p>
+    <p class="class2">Paragraph 4</p>
+    <p class="class1">Paragraph 5</p>
+    <hr>
+
+    <div id="message"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){              
+        $("#btn1").click(function(){
+            $("p").addClass("blue");            
+        });
+
+        $("#btn2").click(function(){
+            $("p").removeClass("blue");            
+        });
+
+        $("#btn3").click(function(){
+            $("p").toggleClass("blue");            
+        });
+    });
+</script>

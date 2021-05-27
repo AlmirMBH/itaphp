@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validation</h1>
+   
+    <input type="text" name="password" id="password" placeholder="Enter password"><br>
+    <input type="text" name="confirm" id="confirm" placeholder="Confrim password"><br>
+    <button id="btn">Submit</button>
+    <hr>
+
+    <div id="message"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+
+        $("#btn").click(function(){
+            let password = $("#password").val();
+            let confirm = $("#confirm").val();
+
+                if(password != "" && confirm != ""){
+                    if(password == confirm){
+                        let message = $("#message").text("You are logged in!");
+                    }else{
+                        let message = $("#message").text("Passwords must match!");
+                        $("#confirm").focus();
+                        return false;
+                    }
+                    
+                }else{
+                    let message = $("#message").text("All fields required!");
+                    return false;
+                }
+        });
+        
+
+       
+
+        
+    });
+</script>

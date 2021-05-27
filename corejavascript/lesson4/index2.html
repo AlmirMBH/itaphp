@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index2</h1>
+    <form action="index2.html" method="post" enctype="multipart/form-data" id="mojaForma">
+        <button>Klikni za upload</button><br><br>
+        <button type="button" onclick="dodajFile()">Dodaj file element</button><br><br>
+        <input type="file" name="slika1" id="slika1"><br><br>
+        
+    </form>
+</body>
+</html>
+<script>
+    let i=2;
+    function dodajFile(){
+        let forma=document.querySelector("#mojaForma");
+        let file=document.createElement("input");
+        file.type="file";
+        file.name="slika"+i;
+        file.id=file.name;
+        forma.appendChild(file);
+        forma.appendChild(document.createElement("br"));
+        forma.appendChild(document.createElement("br"));
+        i++;
+    }
+</script>

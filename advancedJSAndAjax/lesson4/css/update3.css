@@ -1,0 +1,10 @@
+.korisnici{
+    border:1px solid black;
+    width:200px;
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+}
+.korisnici:hover{
+    background-color: lightgray;
+}

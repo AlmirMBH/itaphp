@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mojDiv">Ovo je tekst</div>
+    <button onclick="uradi()">Klikni me za novi div</button> 
+    <button onclick="napravip()">Klikni za paragraf</button>
+    <button onclick="uklonip()">Ukloni paragraf</button>
+    <button onclick="uklonid()">Ukloni divove</button>
+    <hr>
+</body>
+</html>
+<script>
+    function uradi(){
+        let div=document.createElement("div");
+        div.innerHTML="ovo je DIV iz JS-a";
+        div.id="mojDivIzJS-a";
+        div.setAttribute("name", "Bosko");
+        div.setAttribute("data-ime", "Bosko");
+        div.setAttribute("data-prezime", "Bogojevic");
+        document.body.appendChild(div);
+        div.style.color="red";
+    }
+    function napravip(){
+        if(document.querySelector("#par")) return false;
+        let p=document.createElement("p");
+        p.innerHTML="ovo je paragraf iz JS-a";
+        p.id="par";
+        document.body.appendChild(p);
+    }
+    function uklonip(){
+        if(!document.querySelector("#par")) return false;
+        p=document.querySelector("#par");
+        //p.outerHTML="";
+        document.body.removeChild(p);
+    }
+    function uklonid(){
+        let divovi=document.querySelectorAll("[data-ime]");
+        for(i=0;i<divovi.length;i++)
+            document.body.removeChild(divovi[i]);
+    }
+</script>

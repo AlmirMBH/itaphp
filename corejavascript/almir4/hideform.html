@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comments</h1>
+    <input type="checkbox" id="confirm" name="confirm" onclick="showForm()"> Do you want to leave a comment?<br><br>
+
+    <form action="hideform.html" method="get" id="form" onsubmit="return checkForm()" style="display: none;">
+        <input type="text name" name="name" id="name" placeholder="Enter name"><br><br>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter comment"></textarea><br><br>
+        <button>Submit</button>
+    </form>
+    <hr>
+
+    <div id="message"></div>
+    
+
+    <script src="js/hideform.js"></script>
+</body>
+</html>

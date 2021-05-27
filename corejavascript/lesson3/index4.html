@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .klasa1{
+            border:2px solid black;
+            margin:2px;
+            padding:2px;
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>index4 - getElementsByClassName</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <p class="klasa1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, tempore quas reiciendis ducimus voluptate beatae. Molestiae, aut labore. Quibusdam cupiditate dolorum itaque hic, illo ducimus. Tenetur sed quo aliquid cumque.</p>
+    <div class="klasa2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, pariatur esse dignissimos, dolores doloribus quia dolor maiores commodi molestiae modi corrupti excepturi similique omnis natus, distinctio accusamus odit fuga quis?</div>
+    <label class="klasa2">ovo je labela</label>
+    <span class="klasa1">Ovo je span</span>
+</body>
+</html>
+<script>
+    function uradi(){
+        let k=document.getElementsByClassName("klasa1");
+        for(i=0;i<k.length;i++)
+            k[i].style.cssText="border: 1px solid red";
+        k=document.getElementsByClassName("klasa2");
+        for(i=0;i<k.length;i++)
+        {
+            k[i].style.cssText="border: 5px dashed blue";
+            if(k[i].tagName=="DIV") k[i].innerHTML="ovo je DIV i nikad nece biti nista drugo";
+            else k[i].innerHTML="Ovo nije DIV";
+        }
+            
+    }
+</script>

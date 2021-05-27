@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS lesson 1/1</title>
+</head>
+<body>
+
+    <section id="dWrite-cLog">
+        <h1>Document write and console log</h1>
+        <script>
+            document.write("<p>How ya doin'!</p>");    
+            console.log("Hi, what's up!");
+
+            let a = 5;
+            console.log("Variable a: " + a);
+
+            a = 17;
+            console.log("Variable a: " + a);
+
+            let arr = [10, 20, 30];
+            for(var i in arr){
+                document.write(arr[i] + "<br>");
+            }
+
+            document.write("<br>");
+            for (let i = 0, j = 10; i < 10; i++, j--) {
+                document.write(i + "<br/>");
+                document.write(j + "<br/>");
+                }
+            document.write("<br>End of complex for loop");
+
+        </script>
+    </section>
+
+
+    <section id="alert">
+        <h1>Alert</h1>
+        <script>             
+
+            document.write("Associative array");
+            let arr = [];
+            arr['Bosnia'] = "Sarajevo";
+            arr['France'] = "Paris";
+            arr['Germany'] = "Berlin";            
+            document.write(arr['Bosnia']);
+
+            document.write("<br>Casting of strings: ");            
+            let d = (+"1.1") + (+"1.1"); // casting
+            document.write(d);
+
+            document.write("<br>Round of 5.4: ");
+            let e = Math.round(5.4);
+            document.write(e);
+
+            document.write("<br>Ceiling of 10.3: ");
+            let f = Math.ceil(10.3);
+            document.write(f);
+
+            document.write("<br>Floor of 10.3: ");
+            let g = Math.floor(10.3);
+            document.write(g);
+
+            document.write("<br>Absolute of -3: ");
+            let h = Math.abs(-3);
+            document.write(h);
+
+            document.write("<br>Three to the power of 7: ");
+            let i = Math.pow(3, 7); 
+            document.write(i);
+
+            document.write("<br>Math max: ");
+            let j = Math.max(5,2,8);
+            document.write(j);
+
+            document.write("<br>Character at position 7: ");
+            let k ='Text: "This is a sample text"';
+            let l = k.charAt(7);
+            document.write(l);
+
+            document.write("<br>Concatinated strings: ");
+            var m = "This is a" ;
+            n = m.concat(" sample text.");
+            document.write(n);
+
+            document.write("<br>Substring: ");
+            var o = "This is a sample text." ;
+            var p = o.substr(10,4);
+            document.write(p);
+
+            document.write("<br>Upper case string: ");
+            var r = "This is a sample text." ;
+            var s = r.toUpperCase();
+            document.write(s);
+
+            document.write("<br>String length: ");
+            var t = "This is a sample text. " ;
+            var u = t.length;
+            document.write(u);
+
+            document.write("<br>Trim string on both sides: ");
+            var v = "    Hello    " ;
+            var z = v.trim();
+            document.write(z);
+
+            document.write("<br> Type of: ");
+            let number = 5;    
+            document.write(typeof(number));     
+            document.write("<br>");
+            alert("Your number is " + number);
+            document.write("\n\n Thx for confirming your number.");
+            //let number = 5; // if number was declared here, no output would appear in the browser
+        </script>
+    </section>
+
+
+    <section id="confirm">
+        <h1>Confirm</h1>
+        <script>            
+            let pass = 538276;         
+            let userInput = confirm("Press OK if this is your password:\n\n " + pass + "\n\n");
+            if(userInput == true){ document.write("Welcome to your profile!"); }
+            else{ document.write("Try again!"); }
+        </script>
+    </section>
+
+
+    <section id="prompt">
+        <h1>Prompt and redirection</h1>
+        <script>            
+            let promptUsername = "Enter username";
+            let promptPassword = "Enter password";            
+            let username = prompt(promptUsername);
+            let password = prompt(promptPassword);
+
+            if(username !== null && password !== null){
+                if(username !== " " && password !== " "){
+                    if(username == "almir" && password == "12345"){
+                        document.write("Welcome " + username + "!<br>");
+                        document.write("Your username: " + username + "<br>" + "Your password: " + password);                        
+                    }else{
+                        document.write("Incorrect username or password");
+                    }                    
+                }else{
+                    document.write("You did not enter any data. All fields are required!");
+                }
+            }else{
+                document.write("You pressed cancel. Hope to see you again!");
+            }
+        </script>
+    </section>
+
+    <section id="redirection">
+        <h1>Redirection</h1>
+        <script>            
+            let website = prompt("Enter website");
+            if(website == null){
+                document.write("If you cahnge your mind just refresh this page.");
+            }else if(website == " "){                    
+                document.write("This field is required");
+            }else{
+                window.location.assign("https://" + website);
+            }                
+        </script>
+    </section>
+
+    <section id="cookie-enabled">
+        <h1>Check if cookies are enabled</h1>
+        <script>
+            let cookie = navigator.cookieEnabled;
+            document.write(cookie);
+            </script>
+    </section>
+
+    <section id="numbers">
+        <h1>Numbers</h1>
+        <script>            
+            // prompt always returns a string
+            let number1 = prompt("Enter first number");
+            let number2 = prompt("Enter second number");
+
+            number1 = parseInt(number1);
+            number2 = parseInt(number2);
+
+            if(number1 === null && number2 === null){
+                document.write("You cancelled your mathematical operation.");
+            }else if(number1 == " " && number2 == " "){                    
+                document.write("These fields are required");
+            }else{
+                document.write("The result is: " + (number1 + number2));
+            }                
+        </script>
+    </section>
+    
+
+</body>
+</html>

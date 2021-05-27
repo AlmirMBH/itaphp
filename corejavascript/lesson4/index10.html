@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index10</h1>
+    <input type="radio" name="grupa" value="m" onclick="proveriRadio(this)"> musko <br><br>
+    <input type="radio" name="grupa" value="z" checked onclick="proveriRadio(this)"> zensko <br><br>
+    <input type="radio" name="grupa" value="d" onclick="proveriRadio(this)"> dzedaj <br><br>
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    let o=document.querySelector("#odgovor");
+    function proveriRadio(el){
+        
+        switch(el.value){
+            case "m": 
+                o.innerHTML="Izjasnili ste se kao musko";
+            break;
+            case "z": 
+                o.innerHTML="Izjasnili ste se kao zensko";
+            break;
+            case "d": 
+                o.innerHTML="Izjasnili ste se kao car";
+            break;
+            default: o.innerHTML="";
+        }
+    }
+</script>

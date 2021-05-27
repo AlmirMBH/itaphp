@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>        
+        .class1{
+            background-color: cadetblue;
+            width: 300px;
+            font-weight: 700;
+            margin: 10px;
+            padding: 5px;
+            height: 50px;
+        }        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Properties</h1>    
+    <button id="btn1">Consecutive toggle</button>
+    <button id="btn2">Simultaneous toggle</button>    
+    <hr>
+   
+    <p class="class1" id="p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, eos?</p>
+
+    <p class="class1" id="p2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, eos?</p>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){              
+       $("#btn1").click(function(){
+           $("#p1").slideToggle(1000, function(){
+                $("#p2").slideToggle(1000); // finish 1st paragraph, start 2nd
+           });        
+       });
+       
+       $("#btn2").click(function(){           
+           $("#p1").slideToggle(1000);
+           $("#p2").slideToggle(1500); // toggle both paragraphs simultaneously
+       });
+    });
+</script>

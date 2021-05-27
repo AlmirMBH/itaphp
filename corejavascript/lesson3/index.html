@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index</h1>
+    <button onclick="uradi()">Klikni me</button>
+    <hr>
+    <div id="prvi">Ovo je prvi div</div>
+    <div id="drugi">Ovo je drugi div</div>
+</body>
+</html>
+<script>
+    function uradi(){
+        //let div=document.getElementById("prvi");
+        let div=document.querySelector("#prvi");
+        div.style.color="red";
+        //let div2=document.getElementById("drugi");
+        let div2=document.querySelector("#drugi");
+        div2.style.border="2px solid green";
+    }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .spoljasnji{
+            margin:2px;
+            padding:2px;
+            display: inline-block;
+            height: 210px;
+            border:1px solid black;
+        }
+        .dugme{
+            border:2px solid black;
+            background-color: red;
+            color:white;
+            width: 100px;
+            cursor:pointer;
+            text-align: center;
+        }
+        .dugme:hover{
+            background-color: white;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>index8</h1>
+    <form action="" method="" id='forma' >
+        <input type="text" id="ime" name="ime" placeholder="Unesite ime"><br><br>
+        <input type="file" id="slika" name="slika"><br><br>
+        <button type="button">Klikni za .ajax() metodu</button>
+    </form>
+    
+    <hr>
+    <div id="odgovor"></div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:"ajax/obrada8.php",
+                type: "POST",
+                data: new FormData(document.getElementById('forma')),
+                contentType: false, 
+                cache: false, 
+                processData: false,
+                success:uspeh,
+                error:greska,
+                beforeSend:preSlanja
+            })
+        })
+    })
+    function uspeh(response){
+        //$("#odgovor").html(response);
+        let odgovor=JSON.parse(response);
+        if(odgovor.greska!="") $("#odgovor").html("<span style='color:red'>"+odgovor.greska+'</span>');
+        else{
+            let div=$("<div class='spoljasnji'></div>");
+            let slika=$("<img src='slike/"+odgovor.podatak+"' height='180px'>");
+            let dugme=$("<div class='dugme' data-ime='"+odgovor.podatak+"' onclick='obrisi(this)'>Obrisi</div>");
+            div.append(slika);
+            div.append(dugme);
+            $("#odgovor").append(div);
+        }         
+    }
+    function greska(xhr){
+        $("#odgovor").html(xhr.status + "<br>" + xhr.statusText);
+    }
+    function preSlanja(){
+        //alert("Ovo se dogadja pre slanja asinhronog zahteva");
+        /*if($("#ime").val()=="" || $("#prezime").val()==""){
+            $("#odgovor").html("Svi podaci su obavezni");
+            return false;
+        }*/
+    }
+    function obrisi(obj){
+        let slikaZaBrisanje=obj.getAttribute("data-ime");
+        $.post("ajax/obrada8brisanje.php", {ime: slikaZaBrisanje}, function(response){
+            if(response=="0")document.getElementById('odgovor').removeChild(obj.parentNode);
+            else alert(response);
+        })
+        
+    }
+</script>

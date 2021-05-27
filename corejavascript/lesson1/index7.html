@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index7</h1>
+    <script>
+        function ispisi(tekst="Default string"){
+            return("Ovo je iz funkcije!!!!<br>" + tekst);
+        }
+        function deljenje(a, b){
+            if(b==0)return false;
+            return (a/b);
+        }
+        document.write(ispisi("Ovo je string za ispis<br>"));
+        document.write(ispisi());
+        document.write("<hr>");
+        let a=deljenje(1,0);
+        if(a!=false)document.write("Rezultat je: " + a);
+        else document.write("Nedozvoljeno deljenje nulom");
+        
+    </script>
+</body>
+</html>

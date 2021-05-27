@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index10</h1>
+</body>
+</html>
+<script>
+class MK{
+    constructor(a, b){
+        document.write("Broj prosledjenih argumenata:" + arguments.length);
+        document.write("<br>")
+        for(let i in arguments)
+            document.write(arguments[i]+"<br>");
+        //this.x=(a=="" || a==null)?0:parseInt(a);
+        if(a=="" || a==null)this.x=0;
+        else this.x=parseInt(a);
+        this.y=(b=="" || b==null)?0:parseInt(b);
+    }
+}
+//let a=prompt("Unesi a");
+//let b=prompt("Unesi b");
+//document.write(a + " " +b);
+let obj=new MK(4, 6, 5,6,9,8,7,12,45,2);
+document.write(obj.x+obj.y);
+</script>

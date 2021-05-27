@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Index10</h1>
+    <button id="d1" >Pozovi .get() metodu</button>
+    
+    <hr>
+    <div id="odgovor">Ovo je originalni tekst</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $("#d1").click(function(){
+            $.get("ajax9.php", {ime:"Bosko",prezime:"Bogojevic"}, function(response){
+                $("#odgovor").html(response);
+            })
+        })
+    })
+</script>

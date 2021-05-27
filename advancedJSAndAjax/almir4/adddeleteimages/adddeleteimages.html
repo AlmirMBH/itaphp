@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .image{
+            margin:2px;
+            padding:5px;
+            display: inline-block;
+            border: 1px solid blue;
+            height: 160px; 
+            text-align: center;           
+        }
+
+        .image img{
+            height: 100px;
+            margin: 5px;
+        }
+
+        .button{
+            background-color: red;
+            border: 1px solid black;
+            color: white;
+            width: 60px;
+            cursor: pointer;
+            padding: 4px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button:hover{
+            background-color: white;
+            color: red;
+        }
+    </style>
+    <title>Ajax</title>
+</head>
+<body>
+    <h1>Binary data</h1>
+    <form action="" method="" id="form">
+        <input type="text" name="name" id="name" placeholder="Enter your name"><br>
+        <input type="file" name="image" id="image"><br>
+        <button type="button">Invoke ajax method</button>
+    </form>
+    <hr>
+    <id id="message">Info message</id>
+</body>
+</html>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({                
+                url: "adddeleteimages.php",                
+                type:"POST", // get not working
+                data: new FormData(document.getElementById("form")),
+                contentType:false, 
+                cache:false, 
+                processData:false,
+                success: success,
+                error: errorStatus,
+                beforeSend: beforeSend
+            });
+        });        
+    })
+
+
+    function success(response){        
+        let output = JSON.parse(response);
+        if(output.error == ""){
+            let div = $("<div class='image'></div>");
+            let image = $("<img src='../img/" + output.data + "'>");
+            div.append(image);
+            let button = $("<div class='button' data-image='" + output.data + "' onclick='deleteImg(this)'>Delete</div>");
+            div.append(button);
+            $("#message").append(div);    
+        }else{
+            $("#message").html(output.error);
+        }                    
+    }
+
+    function errorStatus(){
+        $("#message").html(xhr.status + "<br>" + xhr.statusText);                
+    }
+
+    function beforeSend(){
+        // comment this block of code to test server validation in validation.php
+        if($("#name").val() == "" || $("#surname").val() == ""){
+            alert("All fields are required!");
+            return false;
+        }
+    }
+
+    function deleteImg(obj){        
+        let img = obj.getAttribute("data-image");       
+        $.post("adddeleteimages.php", {imageName:img}, function(response){
+            console.log(response);
+            if(!response == "0"){                
+                document.getElementById("message").removeChild(obj.parentNode);                
+            }else{
+                alert(response);
+            }
+            
+        })
+        
+    }
+
+    
+        
+</script>

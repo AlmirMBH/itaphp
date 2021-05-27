@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    
+</head>
+<body>
+    <h1>Index2</h1>
+    <button id="d1" >Klikni me</button>
+    <hr>
+    <div id='mojDiv' style="background-color: aqua;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        /*$("#d1").click(function(){
+            alert("Klinut sam!!!!");
+        })*/
+        let i=1;
+        $("#d1").on("click", function(){
+            let p=$("<p>Ovo je moj novi paragraf</p>").css("background-color", "red")
+            .attr("id","mojP"+i)
+            .attr("data-ime", "Bosko");
+            i++;
+            $("#mojDiv").prepend(p);
+            //$("#d1").off("click");
+        })
+    });
+    
+</script>

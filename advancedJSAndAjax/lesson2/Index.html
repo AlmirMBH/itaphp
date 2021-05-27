@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    
+</head>
+<body>
+    <h1>Index</h1>
+    <div id='mojDiv' style="background-color: aqua;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad, accusantium, dolorem ut nihil at minus modi quos, consequatur cum possimus. Esse, ex corporis! Veniam dicta laboriosam consectetur possimus libero!</p>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        /*let h1=document.querySelectorAll("h1");
+        h1[0].innerHTML="Novi tekst";*/
+        let p=$("<p></p>").html("Ovo je moj tekst").css("background-color", "red").css("border", "1px solid black");
+        $("#mojDiv").append(p);
+    });
+</script>

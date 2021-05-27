@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>        
+        .class1{
+            background-color: cadetblue;
+            width: 300px;
+            font-weight: 700;
+            margin: 10px;
+            padding: 5px;
+            height: 50px;
+        }        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Properties</h1>    
+    <select name="lang" id="lang">
+        <option value="bos">Bosnian</option>
+        <option value="eng">English</option>
+    </select>  
+    <hr>
+   
+    <p data-bos="paragraf 1" data-eng="paragraph 1">Paragraf 1 bosanski</p>
+    <p data-bos="paragraf 2" data-eng="paragraph 2">Paragraf 2 bosanski</p>
+    <p data-bos="paragraf 3" data-eng="paragraph 3">Paragraf 3 bosanski</p>
+    <p data-bos="paragraf 4" data-eng="paragraph 4">Paragraf 4 bosanski</p>   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#lang").change(function(){
+            let language = $(this).val();
+            $("[data-" + language + "]").each(function(){
+                let text = $(this).data(language);                              
+                $(this).html(text);
+            });
+        });
+    });
+</script>

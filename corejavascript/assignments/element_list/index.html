@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Select car</title>
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="title">
+            <h1>Select your favorite car</h1>    
+        </div>        
+            <select onchange="selectCar(this)">    
+            <option>-- Select your dream car --</option>
+            <option>Peugeot</option>
+            <option>BMW</option>
+            <option>Toyota</option>
+            </select>
+            <img src="car.png" alt="car">
+            <p id="message">Finally! Just one click away from your new car :)</p>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

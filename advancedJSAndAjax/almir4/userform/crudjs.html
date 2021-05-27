@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/crud.js"></script>
+    <style>
+        body{
+            width: 960px;
+            margin: 0px auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .users{
+            border: 1px solid black;
+            width: 300px;
+            padding: 2px;
+            margin: 2px;
+            cursor: pointer;            
+        }
+
+        .message{
+            margin-left: 330px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+        }
+        .users:hover{
+            background-color: gray;
+        }
+
+        .wrapper{
+            margin-left: 410px;
+        }
+    </style>
+    <title>User management</title>
+</head>
+<body>
+    
+    <h1>Update / Insert / Delete</h1>
+    <form action=""></form> 
+    <div id="message" class="message mt-3 mb-5">Users</div> 
+    <div id="info">Info message</div>    
+    <hr>
+    
+    <div class="wrapper mt-5">        
+        <input type="text" id="id" placeholder="Enter ID" disabled><br>
+        <input type="text" id="name" placeholder="Enter name"><br>
+        <input type="text" id="email" placeholder="Enter email"><br>
+        <input type="text" id="username" placeholder="Enter username"><br>
+        <input type="text" id="password" placeholder="Enter password"><br>
+        <input type="text" id="role" placeholder="Enter role"><br>
+        <select name="status" id="status">
+            <option value="0">-- Select status --</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select><br>
+        <button id="btn1">Clear</button>
+        <button id="btn2">Save</button>
+        <button id="btn3">Delete</button>
+    </div>    
+</body>
+</html>

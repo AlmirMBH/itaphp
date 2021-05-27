@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .klasa2{
+            background-color: aqua;
+            height:30px;
+            width:100px;
+            margin:2px
+        }
+
+    </style>
+</head>
+<body>
+    <h1>index9</h1>
+    <button id='d1'>Pomeri</button> <button id='d2'>Vrati</button> 
+    <hr>
+    
+    <div class='klasa2'>Ovo je div</div>
+    <div class='klasa2'>Ovo je div</div>
+    <div class='klasa2'>Ovo je div</div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".klasa2").mouseenter(function(){
+            $(this).animate({"width":'120px', "font-size":"1.5em","background-color":"pink"}, 200);
+        })
+        $(".klasa2").mouseleave(function(){
+            $(this).animate({"width":'100px', "font-size":"1em","background-color":"aqua"}, 200);
+        })
+    })
+    
+</script>

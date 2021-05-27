@@ -1,0 +1,1 @@
+Ovo je tekst iz tekstualne datoteke!!!! Ovo je novi tekst u datoteci.

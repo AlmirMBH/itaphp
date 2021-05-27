@@ -1,0 +1,22 @@
+.spoljasnji{
+    width:350px;
+    margin-left: 50px;
+}
+
+.unutrasnji{
+    width:100px;
+    height: 100px;
+    display: inline-block;
+    border:1px solid black;
+}
+
+.bodovi{
+    background-color: lightgrey;
+    font-weight: bold;
+    width:100px;
+    height:20px;
+    margin-left: 50px;
+}
+#primer{
+    margin-left: 50px; 
+}

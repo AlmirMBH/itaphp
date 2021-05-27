@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .section{
+            background-color: blanchedalmond;
+            padding: 20px;
+            width: 300px;
+        }
+    </style>
+    <title>Asynchronous</title>
+</head>
+<body>
+
+    <h1>Asynchronous loading via data()</h1>
+    <button id="btn1" data-file='log.txt'>Load log</button>
+    <button id="btn2" data-file='log1.txt'>Load log 1</button>
+    <button id="btn3" data-file='log2.txt'>Load log 2</button>
+    <button id="btn4" data-file='log3.txt'>Load log 3</button>
+    <hr>
+    <div class="section">The original text</div>
+    
+</body>
+</html>
+
+<script>
+    $(function(){
+        $("button").click(function(){
+            $("div").load("logs/" + $(this).data("file"))
+        });
+    });
+
+    
+</script>

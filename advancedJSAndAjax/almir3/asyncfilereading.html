@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .section{
+            background-color: blanchedalmond;
+            padding: 20px;
+            width: 300px;
+        }
+    </style>
+    <title>Asynchronous</title>
+</head>
+<body>
+
+    <h1>Asynchronous loading</h1>
+    <button id="btn1">Refresh</button>
+    <button id="btn2">Load log 1</button>
+    <button id="btn3">Load log 2</button>
+    <button id="btn4">Load log 3</button>
+    <hr>
+    <div class="section">The original text</div>
+    
+</body>
+</html>
+
+<script>
+    $(function(){
+        //$("div").load("text.txt");
+
+        $("#btn1").click(function(){
+            $("div").load("logs/log.txt");
+        });
+
+        $("#btn2").click(function(){
+            $("div").load("logs/log1.txt");
+        });
+
+        $("#btn3").click(function(){
+            $("div").load("logs/log2.txt");
+        });
+
+        $("#btn4").click(function(){
+            $("div").load("logs/log3.txt");
+        });
+    });
+
+    
+</script>
